@@ -1,0 +1,62 @@
+<body>
+<h1>
+lalala
+</h1>
+<canvas id="c1" width="500" height="500" style="border:solid 1px #000000;"></canvas></body>
+<button onclick="draw_square();return true;">Red Square</button>
+
+
+<script>
+function draw_square() {
+   var c1 = document.getElementById("c1");
+   var c1_context = c1.getContext("2d");
+   var c2 = c1.width/10;
+   for(origine=0; origine<=c1.width; origine+=2*c2){
+       for (largeur=0; largeur<=c1.height; largeur+=2*c2)
+       {c1_context.fillStyle = "#f00";
+        c1_context.fillRect(origine, largeur, c2, c2);}}
+        
+        
+    for(origine=c2; origine<=c1.width; origine+=2*c2){
+        for (largeur=c2; largeur<=c1.height; largeur+=2*c2)
+        {c1_context.fillStyle = "red";
+        c1_context.fillRect(origine, largeur, c2, c2);}
+    
+    }
+
+}
+    document.onkeyup=function (e)
+{
+    e=e || window.event;
+    var code=e.keyCode || e.which;
+    
+    var monCercle = new Object(){
+        element:document.getElementById("c1"),
+        context : this.element.getContext("2d"),
+        position : this.element.width/20,
+        size:10,
+        x:position,
+        y:position        
+        };
+        
+    c1_context.arc(monCercle.position,monCercle.position,monCercle.size,0,Math.PI*2,true);
+    c1_context.fillStyle = "blue";
+    c1_context.fill();
+    
+};
+
+</script>
+switch(expression) {
+    case e=40:
+        {}
+        break;
+    case e=38:
+        code block
+        break;
+    case e=37:
+        code block
+        break;
+    case e=39:
+        code block
+        break;
+}
